@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="register">สมัครสมาชิก</title>
+    <script src="script/auth.js" defer></script>
+    <link rel ="stylesheet" href="css/style.css" />
+    <script src="script/lang.js" defer></script>
+    <script src="script/script.js" defer></script>
+  </head>
+  <body>
+    <div class="navbar">
+        <nav>
+            <a href="index.html" data-i18n="home">หน้าหลัก</a>
+            <a href="login.html" data-i18n="login">เข้าสู่ระบบ</a>
+            <a href="signup.html" data-i18n="register">สมัครสมาชิก</a>
+            <a href="shop.html" data-i18n="bookingSummary">ตั๋วที่จอง</a>
+            <button id="toggle-lang-btn" onclick="toggleLanguage()" style="width: 5%;">🌐</button>
+        </nav>
+      </div>
+    <div class="container">
+      <h2 data-i18n="register">สมัครสมาชิก</h2>
+      <input type="text" id="reg-username" placeholder="Username" required/>
+      <input type="password" id="reg-password" placeholder="Password" required/>
+      <button onclick="register()" data-i18n="register">สมัครสมาชิก</button>
+      <p id="message" style="text-align: center;"></p>
+      <div id="box" style="text-align: center">
+        <p data-i18n="already">มีบัญชีอยู่แล้ว? </p>
+        <a href="login.html" data-i18n="login" style=" color:#76e79c">เข้าสู่ระบบ</a>
+      </div>
+    </div>
+  </body>
+</html>

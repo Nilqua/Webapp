@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="title">จองตั๋วเครื่องบิน</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script/script.js" defer></script>
+    <script src="script/lang.js" defer></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <nav>
+        <a href="index.html" data-i18n="home">หน้าหลัก</a>
+        <a href="login.html" data-i18n="login">เข้าสู่ระบบ</a>
+        <a href="signup.html" data-i18n="register">สมัครสมาชิก</a>
+        <a href="shop.html" data-i18n="bookingSummary">ตั๋วที่จอง</a>
+        <button id="toggle-lang-btn" onclick="toggleLanguage()" style="width: 5%;">🌐</button>
+      </nav>
+    </div>
+    <div class="container">
+      <h2 data-i18n="title">จองตั๋วเครื่องบิน</h2>
+      <form id="bookingForm">
+        <label data-i18n="name">ชื่อ-นามสกุล:</label>
+        <input type="text" id="fullname" required />
+
+        <label data-i18n="email">อีเมล:</label>
+        <input type="email" id="email" required />
+
+        <label data-i18n="departure">ต้นทาง:</label>
+        <select id="departure" required>
+            <option value="กรุงเทพมหานคร" data-i18n="bangkok">กรุงเทพมหานคร</option>
+            <option value="กระบี่" data-i18n="krabi">กระบี่</option>
+            <option value="กาญจนบุรี" data-i18n="kanchanaburi">กาญจนบุรี</option>
+            <option value="กาฬสินธุ์" data-i18n="kalasin">กาฬสินธุ์</option>
+            <option value="กำแพงเพชร" data-i18n="kamphaeng_phet">กำแพงเพชร</option>
+            <option value="ขอนแก่น" data-i18n="khon_kaen">ขอนแก่น</option>
+            <option value="จันทบุรี" data-i18n="chanthaburi">จันทบุรี</option>
+            <option value="ฉะเชิงเทรา" data-i18n="chachoengsao">ฉะเชิงเทรา</option>
+            <option value="ชลบุรี" data-i18n="chonburi">ชลบุรี</option>
+            <option value="ชัยนาท" data-i18n="chainat">ชัยนาท</option>
+            <option value="ชัยภูมิ" data-i18n="chaiyaphum">ชัยภูมิ</option>
+            <option value="ชุมพร" data-i18n="chumphon">ชุมพร</option>
+            <option value="เชียงราย" data-i18n="chiang_rai">เชียงราย</option>
+            <option value="เชียงใหม่" data-i18n="chiang_mai">เชียงใหม่</option>
+            <option value="ตรัง" data-i18n="trang">ตรัง</option>
+            <option value="ตราด" data-i18n="trat">ตราด</option>
+            <option value="ตาก" data-i18n="tak">ตาก</option>
+            <option value="นครนายก" data-i18n="nakhon_nayok">นครนายก</option>
+            <option value="นครปฐม" data-i18n="nakhon_pathom">นครปฐม</option>
+            <option value="นครพนม" data-i18n="nakhon_phanom">นครพนม</option>
+            <option value="นครราชสีมา" data-i18n="nakhon_ratchasima">นครราชสีมา</option>
+            <option value="นครศรีธรรมราช" data-i18n="nakhon_si_thammarat">นครศรีธรรมราช</option>
+            <option value="นครสวรรค์" data-i18n="nakhon_sawan">นครสวรรค์</option>
+            <option value="นนทบุรี" data-i18n="nonthaburi">นนทบุรี</option>
+            <option value="นราธิวาส" data-i18n="narathiwat">นราธิวาส</option>
+            <option value="น่าน" data-i18n="nan">น่าน</option>
+            <option value="บึงกาฬ" data-i18n="bueng_kan">บึงกาฬ</option>
+            <option value="บุรีรัมย์" data-i18n="buri_ram">บุรีรัมย์</option>
+            <option value="ปทุมธานี" data-i18n="pathum_thani">ปทุมธานี</option>
+            <option value="ประจวบคีรีขันธ์" data-i18n="prachuap_khiri_khan">ประจวบคีรีขันธ์</option>
+            <option value="ปราจีนบุรี" data-i18n="prachin_buri">ปราจีนบุรี</option>
+            <option value="ปัตตานี" data-i18n="pattani">ปัตตานี</option>
+            <option value="พระนครศรีอยุธยา" data-i18n="phra_nakhon_si_ayutthaya">พระนครศรีอยุธยา</option>
+            <option value="พังงา" data-i18n="phang_nga">พังงา</option>
+            <option value="พัทลุง" data-i18n="phatthalung">พัทลุง</option>
+            <option value="พิจิตร" data-i18n="phichit">พิจิตร</option>
+            <option value="พิษณุโลก" data-i18n="phitsanulok">พิษณุโลก</option>
+            <option value="เพชรบุรี" data-i18n="phetchaburi">เพชรบุรี</option>
+            <option value="เพชรบูรณ์" data-i18n="phetchabun">เพชรบูรณ์</option>
+            <option value="แพร่" data-i18n="phrae">แพร่</option>
+            <option value="พะเยา" data-i18n="phayao">พะเยา</option>
+            <option value="ภูเก็ต" data-i18n="phuket">ภูเก็ต</option>
+            <option value="มหาสารคาม" data-i18n="maha_sarakham">มหาสารคาม</option>
+            <option value="มุกดาหาร" data-i18n="mukdahan">มุกดาหาร</option>
+            <option value="แม่ฮ่องสอน" data-i18n="mae_hong_son">แม่ฮ่องสอน</option>
+            <option value="ยโสธร" data-i18n="yasothon">ยโสธร</option>
+            <option value="ยะลา" data-i18n="yala">ยะลา</option>
+            <option value="ร้อยเอ็ด" data-i18n="roi_et">ร้อยเอ็ด</option>
+            <option value="ระนอง" data-i18n="ranong">ระนอง</option>
+            <option value="ระยอง" data-i18n="rayong">ระยอง</option>
+            <option value="ราชบุรี" data-i18n="ratchaburi">ราชบุรี</option>
+            <option value="ลพบุรี" data-i18n="lopburi">ลพบุรี</option>
+            <option value="ลำปาง" data-i18n="lampang">ลำปาง</option>
+            <option value="ลำพูน" data-i18n="lamphun">ลำพูน</option>
+            <option value="เลย" data-i18n="loei">เลย</option>
+            <option value="ศรีสะเกษ" data-i18n="si_sa_ket">ศรีสะเกษ</option>
+            <option value="สกลนคร" data-i18n="sakon_nakhon">สกลนคร</option>
+            <option value="สงขลา" data-i18n="songkhla">สงขลา</option>
+            <option value="สตูล" data-i18n="satun">สตูล</option>
+            <option value="สมุทรปราการ" data-i18n="samut_prakan">สมุทรปราการ</option>
+            <option value="สมุทรสงคราม" data-i18n="samut_songkhram">สมุทรสงคราม</option>
+            <option value="สมุทรสาคร" data-i18n="samut_sakhon">สมุทรสาคร</option>
+            <option value="สระแก้ว" data-i18n="sa_kaeo">สระแก้ว</option>
+            <option value="สระบุรี" data-i18n="saraburi">สระบุรี</option>
+            <option value="สิงห์บุรี" data-i18n="sing_buri">สิงห์บุรี</option>
+            <option value="สุโขทัย" data-i18n="sukhothai">สุโขทัย</option>
+            <option value="สุพรรณบุรี" data-i18n="suphan_buri">สุพรรณบุรี</option>
+            <option value="สุราษฎร์ธานี" data-i18n="surat_thani">สุราษฎร์ธานี</option>
+            <option value="สุรินทร์" data-i18n="surin">สุรินทร์</option>
+            <option value="หนองคาย" data-i18n="nong_khai">หนองคาย</option>
+            <option value="หนองบัวลำภู" data-i18n="nong_bua_lam_phu">หนองบัวลำภู</option>
+            <option value="อ่างทอง" data-i18n="ang_thong">อ่างทอง</option>
+            <option value="อุดรธานี" data-i18n="udon_thani">อุดรธานี</option>
+            <option value="อุทัยธานี" data-i18n="uthai_thani">อุทัยธานี</option>
+            <option value="อุตรดิตถ์" data-i18n="uttaradit">อุตรดิตถ์</option>
+            <option value="อุบลราชธานี" data-i18n="ubon_ratchathani">อุบลราชธานี</option>
+            <option value="อำนาจเจริญ" data-i18n="amnat_charoen">อำนาจเจริญ</option>
+        </select>
+
+        <label data-i18n="destination">ปลายทาง:</label>
+        <select id="destination" required>
+            <option value="กรุงเทพมหานคร" data-i18n="bangkok">กรุงเทพมหานคร</option>
+            <option value="กระบี่" data-i18n="krabi">กระบี่</option>
+            <option value="กาญจนบุรี" data-i18n="kanchanaburi">กาญจนบุรี</option>
+            <option value="กาฬสินธุ์" data-i18n="kalasin">กาฬสินธุ์</option>
+            <option value="กำแพงเพชร" data-i18n="kamphaeng_phet">กำแพงเพชร</option>
+            <option value="ขอนแก่น" data-i18n="khon_kaen">ขอนแก่น</option>
+            <option value="จันทบุรี" data-i18n="chanthaburi">จันทบุรี</option>
+            <option value="ฉะเชิงเทรา" data-i18n="chachoengsao">ฉะเชิงเทรา</option>
+            <option value="ชลบุรี" data-i18n="chonburi">ชลบุรี</option>
+            <option value="ชัยนาท" data-i18n="chainat">ชัยนาท</option>
+            <option value="ชัยภูมิ" data-i18n="chaiyaphum">ชัยภูมิ</option>
+            <option value="ชุมพร" data-i18n="chumphon">ชุมพร</option>
+            <option value="เชียงราย" data-i18n="chiang_rai">เชียงราย</option>
+            <option value="เชียงใหม่" data-i18n="chiang_mai">เชียงใหม่</option>
+            <option value="ตรัง" data-i18n="trang">ตรัง</option>
+            <option value="ตราด" data-i18n="trat">ตราด</option>
+            <option value="ตาก" data-i18n="tak">ตาก</option>
+            <option value="นครนายก" data-i18n="nakhon_nayok">นครนายก</option>
+            <option value="นครปฐม" data-i18n="nakhon_pathom">นครปฐม</option>
+            <option value="นครพนม" data-i18n="nakhon_phanom">นครพนม</option>
+            <option value="นครราชสีมา" data-i18n="nakhon_ratchasima">นครราชสีมา</option>
+            <option value="นครศรีธรรมราช" data-i18n="nakhon_si_thammarat">นครศรีธรรมราช</option>
+            <option value="นครสวรรค์" data-i18n="nakhon_sawan">นครสวรรค์</option>
+            <option value="นนทบุรี" data-i18n="nonthaburi">นนทบุรี</option>
+            <option value="นราธิวาส" data-i18n="narathiwat">นราธิวาส</option>
+            <option value="น่าน" data-i18n="nan">น่าน</option>
+            <option value="บึงกาฬ" data-i18n="bueng_kan">บึงกาฬ</option>
+            <option value="บุรีรัมย์" data-i18n="buri_ram">บุรีรัมย์</option>
+            <option value="ปทุมธานี" data-i18n="pathum_thani">ปทุมธานี</option>
+            <option value="ประจวบคีรีขันธ์" data-i18n="prachuap_khiri_khan">ประจวบคีรีขันธ์</option>
+            <option value="ปราจีนบุรี" data-i18n="prachin_buri">ปราจีนบุรี</option>
+            <option value="ปัตตานี" data-i18n="pattani">ปัตตานี</option>
+            <option value="พระนครศรีอยุธยา" data-i18n="phra_nakhon_si_ayutthaya">พระนครศรีอยุธยา</option>
+            <option value="พังงา" data-i18n="phang_nga">พังงา</option>
+            <option value="พัทลุง" data-i18n="phatthalung">พัทลุง</option>
+            <option value="พิจิตร" data-i18n="phichit">พิจิตร</option>
+            <option value="พิษณุโลก" data-i18n="phitsanulok">พิษณุโลก</option>
+            <option value="เพชรบุรี" data-i18n="phetchaburi">เพชรบุรี</option>
+            <option value="เพชรบูรณ์" data-i18n="phetchabun">เพชรบูรณ์</option>
+            <option value="แพร่" data-i18n="phrae">แพร่</option>
+            <option value="พะเยา" data-i18n="phayao">พะเยา</option>
+            <option value="ภูเก็ต" data-i18n="phuket">ภูเก็ต</option>
+            <option value="มหาสารคาม" data-i18n="maha_sarakham">มหาสารคาม</option>
+            <option value="มุกดาหาร" data-i18n="mukdahan">มุกดาหาร</option>
+            <option value="แม่ฮ่องสอน" data-i18n="mae_hong_son">แม่ฮ่องสอน</option>
+            <option value="ยโสธร" data-i18n="yasothon">ยโสธร</option>
+            <option value="ยะลา" data-i18n="yala">ยะลา</option>
+            <option value="ร้อยเอ็ด" data-i18n="roi_et">ร้อยเอ็ด</option>
+            <option value="ระนอง" data-i18n="ranong">ระนอง</option>
+            <option value="ระยอง" data-i18n="rayong">ระยอง</option>
+            <option value="ราชบุรี" data-i18n="ratchaburi">ราชบุรี</option>
+            <option value="ลพบุรี" data-i18n="lopburi">ลพบุรี</option>
+            <option value="ลำปาง" data-i18n="lampang">ลำปาง</option>
+            <option value="ลำพูน" data-i18n="lamphun">ลำพูน</option>
+            <option value="เลย" data-i18n="loei">เลย</option>
+            <option value="ศรีสะเกษ" data-i18n="si_sa_ket">ศรีสะเกษ</option>
+            <option value="สกลนคร" data-i18n="sakon_nakhon">สกลนคร</option>
+            <option value="สงขลา" data-i18n="songkhla">สงขลา</option>
+            <option value="สตูล" data-i18n="satun">สตูล</option>
+            <option value="สมุทรปราการ" data-i18n="samut_prakan">สมุทรปราการ</option>
+            <option value="สมุทรสงคราม" data-i18n="samut_songkhram">สมุทรสงคราม</option>
+            <option value="สมุทรสาคร" data-i18n="samut_sakhon">สมุทรสาคร</option>
+            <option value="สระแก้ว" data-i18n="sa_kaeo">สระแก้ว</option>
+            <option value="สระบุรี" data-i18n="saraburi">สระบุรี</option>
+            <option value="สิงห์บุรี" data-i18n="sing_buri">สิงห์บุรี</option>
+            <option value="สุโขทัย" data-i18n="sukhothai">สุโขทัย</option>
+            <option value="สุพรรณบุรี" data-i18n="suphan_buri">สุพรรณบุรี</option>
+            <option value="สุราษฎร์ธานี" data-i18n="surat_thani">สุราษฎร์ธานี</option>
+            <option value="สุรินทร์" data-i18n="surin">สุรินทร์</option>
+            <option value="หนองคาย" data-i18n="nong_khai">หนองคาย</option>
+            <option value="หนองบัวลำภู" data-i18n="nong_bua_lam_phu">หนองบัวลำภู</option>
+            <option value="อ่างทอง" data-i18n="ang_thong">อ่างทอง</option>
+            <option value="อุดรธานี" data-i18n="udon_thani">อุดรธานี</option>
+            <option value="อุทัยธานี" data-i18n="uthai_thani">อุทัยธานี</option>
+            <option value="อุตรดิตถ์" data-i18n="uttaradit">อุตรดิตถ์</option>
+            <option value="อุบลราชธานี" data-i18n="ubon_ratchathani">อุบลราชธานี</option>
+            <option value="อำนาจเจริญ" data-i18n="amnat_charoen">อำนาจเจริญ</option>
+        </select>
+
+        <label data-i18n="departureDate">วันที่ออกเดินทาง:</label>
+        <input type="date" id="departureDate" required />
+
+        <label data-i18n="returnDate">วันที่กลับ:</label>
+        <input type="date" id="returnDate" />
+
+        <label data-i18n="passengers">จำนวนผู้โดยสาร:</label>
+        <input type="number" id="passengers" min="1" value="1" required />
+
+        <label data-i18n="class">ชั้นโดยสาร:</label>
+        <select id="class">
+          <option value="economy" data-i18n="economy">ชั้นประหยัด</option>
+          <option value="business" data-i18n="business">ชั้นธุรกิจ</option>
+          <option value="first" data-i18n="first">ชั้นหนึ่ง</option>
+        </select>
+        <button type="button" onclick="findflight();" data-i18n="search">ค้นหา</button>
+      </form>
+    </div>
+
+    <!-- Modal Summary -->
+    <div id="summaryModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="summaryContent"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="title">จองตั๋วเครื่องบิน</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script/script.js" defer></script>
+    <script src="script/lang.js" defer></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <nav>
+        <a href="index.html" data-i18n="home">หน้าหลัก</a>
+        <a href="login.html" data-i18n="login">เข้าสู่ระบบ</a>
+        <a href="signup.html" data-i18n="register">สมัครสมาชิก</a>
+        <a href="shop.html" data-i18n="bookingSummary">ตั๋วที่จอง</a>
+        <button id="toggle-lang-btn" onclick="toggleLanguage()" style="width: 5%;">🌐</button>
+      </nav>
+    </div>
+    <div class="container">
+        <button onclick="viewBookings() " data-i18n="view" id="shopbutton">ดูการจอง</button>
+    </div>
+    <div id="summaryModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div id="summaryContent"></div>
+        </div>
+      </div>
+</body>
